@@ -1,0 +1,18 @@
+apt update
+apt upgrade
+apt dist-upgrade
+printf "[SeatDefaults]\nallow-guest=false\n" >> /etc/lightdm/lightdm.conf.d/50-no-guest.conf
+## REBOOT ##
+
+apt -y install indicator-multiload unity-tweak-tool
+apt -y install vim git screen
+apt -y install build-essential ruby ruby-dev pry
+apt -y install libmysqlclient-dev mysql-client postgresql-client-common postgresql-client
+
+# install chrome
+apt -y install libindicator7 libappindicator1
+dpkg -i google-chrome-stable_current_amd64.deb
+
+apt autoremove
+
+gem install rake pry aws-sdk sequel rubocop mysql2
