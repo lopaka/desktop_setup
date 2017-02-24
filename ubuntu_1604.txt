@@ -16,3 +16,25 @@ dpkg -i google-chrome-stable_current_amd64.deb
 apt autoremove
 
 gem install rake pry aws-sdk sequel rubocop mysql2
+
+# setup ssh links to open terminal
+if [ "$(id -u)" != "0" ]; then
+  echo "must run items below as non root"
+  exit 1
+fi
+# single quotes around EOT will prevent variable interpretation
+cat << 'EOT' >> ~/.local/share/applications/ssh.desktop
+[Desktop Entry]
+# run following after updating:
+# xdg-mime default ssh.desktop x-scheme-handler/ssh
+Version=1.0
+Type=Application
+Name=SSH Handler
+Terminal=true
+Exec=bash -c '(URL="%U" HOST="${URL#ssh://}"; ssh $HOST)'
+Icon=utilities-terminal
+StartupNotify=false
+MimeType=x-scheme-handler/ssh;
+EOT
+
+xdg-mime default ssh.desktop x-scheme-handler/ssh
