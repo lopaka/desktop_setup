@@ -23,7 +23,7 @@ printf "[SeatDefaults]\nallow-guest=false\n" >> /etc/lightdm/lightdm.conf.d/50-n
 ## REBOOT ##
 
 apt -y install indicator-multiload unity-tweak-tool
-apt -y install vim git screen
+apt -y install vim git screen sysstat whois
 apt -y install build-essential ruby ruby-dev pry
 apt -y install libmysqlclient-dev mysql-client postgresql-client-common postgresql-client
 
