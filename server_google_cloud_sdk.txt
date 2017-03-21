@@ -20,13 +20,17 @@ gcloud config set disable_usage_reporting true
 # 'gsutil lifecycle set [LIFECYCLE_CONFIG_FILE] gs://coldline_storage_bucket_name
 #   See https://cloud.google.com/storage/docs/lifecycle
 #   with lifecycle_config_file being something like:
-# {
-#   "rule":
-#   [
-#     {
-#       "action": {"type": "Delete"},
-#       "condition": {"Age": 1825, "IsLive": false}
-#     }
-#   ]
-# }
+#{
+#  "lifecycle": {
+#    "rule": [{
+#      "action": {
+#        "type": "Delete"
+#      },
+#      "condition": {
+#        "age": 1825,
+#        "isLive": false
+#      }
+#    }]
+#  }
+#}
 # see https://cloud.google.com/storage/docs/gsutil/commands/rsync for flags to use for 'gsutil rsync'
