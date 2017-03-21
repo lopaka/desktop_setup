@@ -15,5 +15,18 @@ source ~/.bashrc
 # Change default of reporting
 gcloud config set disable_usage_reporting true
 
-# 'gcloud init' to setup auth and projects to attach
+# 'gcloud auth activate-service-account --key-file=keyfile.json' # auth using service account
 # 'gsutil versioning set on gs://coldline_storage_bucket_name' # to setup versioning
+# 'gsutil lifecycle set [LIFECYCLE_CONFIG_FILE] gs://coldline_storage_bucket_name
+#   See https://cloud.google.com/storage/docs/lifecycle
+#   with lifecycle_config_file being something like:
+# {
+#   "rule":
+#   [
+#     {
+#       "action": {"type": "Delete"},
+#       "condition": {"Age": 1825, "IsLive": false}
+#     }
+#   ]
+# }
+# see https://cloud.google.com/storage/docs/gsutil/commands/rsync for flags to use for 'gsutil rsync'
