@@ -1,0 +1,19 @@
+# Will disable prompts using defaults on install
+export CLOUDSDK_CORE_DISABLE_PROMPTS=1
+# Install dir
+export CLOUDSDK_INSTALL_DIR=/opt
+
+# Install
+curl https://sdk.cloud.google.com | bash
+
+unset CLOUDSDK_CORE_DISABLE_PROMPTS
+unset CLOUDSDK_INSTALL_DIR
+
+# Load new path
+source ~/.bashrc
+
+# Change default of reporting
+gcloud config set disable_usage_reporting true
+
+# 'gcloud init' to setup auth and projects to attach
+# 'gsutil versioning set on gs://coldline_storage_bucket_name' # to setup versioning
