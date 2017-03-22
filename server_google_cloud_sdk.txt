@@ -34,3 +34,12 @@ gcloud config set disable_usage_reporting true
 #  }
 #}
 # see https://cloud.google.com/storage/docs/gsutil/commands/rsync for flags to use for 'gsutil rsync'
+
+# WARNING: gsutil rsync uses hashes when modification time is not available at
+# both the source and destination. Your crcmod installation isn't using the
+# module's C extension, so checksumming will run very slowly. If this is your
+# first rsync since updating gsutil, this rsync can take significantly longer than
+# usual. For help installing the extension, please see "gsutil help crcmod".
+apt install python-crcmod
+
+gsutil rsync -C -d -P -r -x "^(tmp/|proc/|dev/|media/|mnt/|sys/|run/|var/lock/|swapfile)" / gs://my-bucket
