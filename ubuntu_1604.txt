@@ -25,7 +25,7 @@ printf "[SeatDefaults]\nallow-guest=false\n" >> /etc/lightdm/lightdm.conf.d/50-n
 apt -y install indicator-multiload unity-tweak-tool
 apt -y install vim git screen sysstat whois
 apt -y install build-essential ruby ruby-dev pry
-apt -y install libmysqlclient-dev mysql-client postgresql-client-common postgresql-client
+apt -y install libmysqlclient-dev mysql-client postgresql-client-common postgresql-client mariadb-client
 
 # install chrome
 apt -y install libindicator7 libappindicator1
