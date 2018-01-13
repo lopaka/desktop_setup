@@ -3,23 +3,6 @@ apt upgrade
 apt dist-upgrade
 printf "[SeatDefaults]\nallow-guest=false\n" >> /etc/lightdm/lightdm.conf.d/50-no-guest.conf
 
-# Instructions to install NVIDIA driver if needed
-# run 'lspci | grep VGA' to get card info,
-# ex output: 01:00.0 VGA compatible controller: NVIDIA Corporation G84 [GeForce 8600 GT] (rev a1)
-# Use this info at http://www.nvidia.com/Download/index.aspx ie:
-#   Product Type: GeForce
-#   Product Series GeForce 8 Series
-#   Product: GeForce 8600 GT
-#   Operating System: Linux 64-bit
-# click search and results are:
-#   Version:	340.102
-#   Release Date:	2017.2.14
-#   Operating System:	Linux 64-bit
-#   Language:	English (US)
-#   File Size:	66.72 MB
-# Using the major version number, run:
-# apt install nvidia-340
-
 ## REBOOT ##
 
 apt -y install indicator-multiload unity-tweak-tool
