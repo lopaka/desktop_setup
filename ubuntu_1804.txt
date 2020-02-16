@@ -1,0 +1,11 @@
+apt update
+apt -y upgrade
+
+apt -y install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 gir1.2-clutter-1.0 gir1.2-nm-1.0
+apt -y install gnome-tweaks gnome-system-monitor gnome-shell-extension-system-monitor
+apt -y install vim git screen sysstat whois
+apt -y install build-essential ruby ruby-dev pry
+
+apt -y autoremove
+
+## REBOOT ##
