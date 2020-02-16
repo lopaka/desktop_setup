@@ -9,3 +9,10 @@ apt -y install build-essential ruby ruby-dev pry
 apt -y autoremove
 
 ## REBOOT ##
+
+# Run 'gnome-tweaks' -> Extensions turn:
+# - Ubuntu appindicators
+# - Ubuntu dock
+# - System-monitor
+
+# Install chrome via https://chrome.com
