@@ -1,0 +1,20 @@
+apt update
+apt -y upgrade
+
+apt -y install gnome-tweaks gnome-system-monitor gnome-shell-extension-system-monitor gnome-shell-extension-multi-monitors
+
+apt -y install vim screen sysstat git whois build-essential
+
+
+apt -y autoremove
+
+## REBOOT ##
+
+# Run 'gnome-tweaks' -> Extensions to turn on turn:
+# - Ubuntu appindicators
+# - Ubuntu dock
+# - System-monitor
+
+# Install chrome via https://chrome.com
+
+# Install "Workspace Matrix" via "Ubuntu Software" - allows horizontal work spaces
