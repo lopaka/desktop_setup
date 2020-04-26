@@ -1,10 +1,9 @@
 apt update
 apt -y upgrade
 
-apt -y install gnome-tweaks gnome-system-monitor gnome-shell-extension-system-monitor gnome-shell-extension-multi-monitors
+apt -y install gnome-tweaks gnome-system-monitor gnome-shell-extension-system-monitor
 
 apt -y install vim screen sysstat git whois build-essential
-
 
 apt -y autoremove
 
